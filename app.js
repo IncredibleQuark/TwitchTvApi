@@ -2,7 +2,7 @@
 
 $( document ).ready(function() {
 
-let streams = ['blackfireice', 'freecodecamp'];
+let streams = ['blackfireice', 'freecodecamp', 'mkrr3', 'indystarcraft', 'nervarien', 'bixentehs'];
 
 
 streams.forEach(function (stream) {
@@ -16,36 +16,38 @@ streams.forEach(function (stream) {
         $.ajax({
             mode: 'cors',
             type: 'GET',
+            crossDomain: true,
             url: 'https://wind-bow.gomix.me/twitch-api/users/' + stream,
             dataType: 'json'
 
         }).done((data) => {
-console.warn(data);
-            const link = $('<a>'+data.display_name+'</a>');
-            const listItem = $('<li class="list-group-item"></li>');
 
-            if (data) {
+            const listItem = $('<li class="list-group-item"></li>');
+            const container = $('<div></div>');
+            container.appendTo(listItem);
+            const link = $('<a>' + data.display_name + '</a>');
+            const light = $('<div class="lights"></div>');
 
                 $.ajax({
                     mode: 'cors',
                     type: 'GET',
-                    url: 'https://wind-bow.gomix.me/twitch-api/streams/'+stream,
+                    crossDomain: true,
+                    url: 'https://wind-bow.gomix.me/twitch-api/streams/' + stream,
                     dataType: 'json'
 
                 }).done((data1) => {
 
-
-                    console.log(data1);
-
                     if(data1.stream) {
 
                         link.attr('href', data1.stream.channel.url);
-                        const img = $('<img alt="preview" class="right" src='+data1.stream.preview.medium+'/>');
+                        light.addClass('lights-on');
+                        console.log(data.logo);
+                        const img = $('<img alt="preview" class="right" src=' + data1.stream.preview.medium + '/>');
                         img.appendTo(listItem);
-
 
                         return true;
                     } else {
+                        light.addClass('lights-off');
                         return false;
                     }
 
@@ -55,9 +57,10 @@ console.warn(data);
                     return false;
                 });
 
-            }
+
             listItem.appendTo('#streamers');
             link.appendTo(listItem);
+            light.appendTo(listItem);
 
 
         }).fail((err) => {
