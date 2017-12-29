@@ -1,0 +1,40 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    background-color: #5C9EAD;
+}
+
+.card {
+    background-color: #84C7D0;
+}
+.p-t-l {
+    padding-top: 30px;
+}
+
+.list-group-item {
+    background-color: #84C7D0;
+}
+
+li {
+    height: 200px;
+}
+
+.lights {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.lights-on {
+    background-color: #00dc6e;
+}
+.lights-off {
+    background-color: #ff2700;
+}
+
+.right {
+    float: right;
+}
+

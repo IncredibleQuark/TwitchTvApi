@@ -10,23 +10,50 @@
     <title>Twitch Tv Api</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-hello
+<div class="container p-t-l">
+
+    <span class="badge badge-pill badge-primary"></span>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title display-3">
+                Best Twitch.tv streamers
 
 
+            </div>
+            <div class="card-text">
+                <div class="text-right">
+                <div>
+                    Online:
+                    <div class="lights lights-on right"></div>
+                </div>
+                <div>
+                    Offline:
+                    <div class="lights lights-off right"></div>
+                </div>
+                </div>
 
+                <ul class="list-group" id="streamers">
+                </ul>
+        </div>
+
+
+    </div>
+</div>
 </div>
 
 
-
-
-
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+        integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
 <script src="app.js"></script>
+
 </body>
 </html>
