@@ -12,6 +12,9 @@ body, html {
 .p-t-l {
     padding-top: 30px;
 }
+.m-l-m {
+    margin-left: 15px;
+}
 
 .list-group-item {
     background-color: #84C7D0;
@@ -20,8 +23,6 @@ body, html {
 li {
     height: 200px;
 }
-
-
 
 .lights {
     height: 20px;
@@ -38,5 +39,9 @@ li {
 
 .right {
     float: right;
+}
+
+.inline-block {
+    display: inline-block;
 }
 

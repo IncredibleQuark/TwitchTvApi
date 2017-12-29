@@ -23,10 +23,10 @@ streams.forEach(function (stream) {
         }).done((data) => {
 
             const listItem = $('<li class="list-group-item"></li>');
-            const container = $('<div></div>');
+            const container = $('<div class="inline-block"></div>');
             container.appendTo(listItem);
             const link = $('<a>' + data.display_name + '</a>');
-            const light = $('<div class="lights"></div>');
+            const light = $('<div class="lights inline-block m-l-m"></div>');
 
                 $.ajax({
                     mode: 'cors',
@@ -59,8 +59,8 @@ streams.forEach(function (stream) {
 
 
             listItem.appendTo('#streamers');
-            link.appendTo(listItem);
-            light.appendTo(listItem);
+            link.appendTo(container);
+            light.appendTo(container);
 
 
         }).fail((err) => {
